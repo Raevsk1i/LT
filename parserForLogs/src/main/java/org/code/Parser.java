@@ -25,30 +25,25 @@ public class Parser {
                 }
 
                 if (line.contains(":")) {
-                    time = line.replaceAll("^(\\D+)", "");
-                    if (timeZone.equals("PM")) {
-                        time = time.replaceAll(" PM", "");
-                        if (time.length() == 4) {
-                            time = "0" + time;
-                        }
-                        LocalTime localTime = LocalTime.parse(time).plusHours(12);
-                        if (oldTime.isAfter(localTime)) {
-                            date++;
-                        }
-                        oldTime = localTime;
-                        writer.append(String.valueOf(date)).append(",").append(localTime.toString()).append(",");
-                    } else if (timeZone.equals("AM")) {
-                        time = time.replaceAll(" AM", "");
-                        if (time.length() == 4) {
-                            time = "0" + time;
-                        }
-                        LocalTime localTime = LocalTime.parse(time);
-                        if (oldTime.isAfter(localTime)) {
-                            date++;
-                        }
-                        oldTime = localTime;
-                        writer.append(String.valueOf(date)).append(",").append(localTime.toString()).append(",");
+                    LocalTime localTime = null;
+                    time = line.replaceAll("^(\\D+)| *PM| +AM", "");
+
+                    if (time.length() == 4) {
+                        time = "0" + time;
                     }
+
+                    if (timeZone.equals("PM")) {
+                        localTime = LocalTime.parse(time).plusHours(12);
+                    } else if (timeZone.equals("AM")) {
+                        localTime = LocalTime.parse(time);
+                    }
+
+                    if (oldTime.isAfter(localTime)) {
+                        date++;
+                    }
+
+                    oldTime = localTime;
+                    writer.append(String.valueOf(date)).append(",").append(localTime.toString()).append(",");
                 }
 
                 if (line.contains("команда создана в графане")) {
