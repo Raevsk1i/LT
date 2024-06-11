@@ -1,8 +1,3 @@
-user 695 teamName invitelink bug testing команда создана в графане
-12:29
-user 695 teamName invitelink bug testing подписка для команды создана
-12:29
-user 695 teamName invitelink bug testing команда создана
 
 Cloud bot
 APP  5:08 PM

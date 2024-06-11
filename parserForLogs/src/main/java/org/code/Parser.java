@@ -1,59 +1,81 @@
 package org.code;
 
-import netscape.javascript.JSObject;
-
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.time.LocalTime;
 
 public class Parser {
-
     public static void parse(File file, File result) {
-        try (FileReader fileReader = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fileReader);
-            FileWriter fileWriter = new FileWriter(result);
-            BufferedWriter writer = new BufferedWriter(fileWriter))
-        {
-            Map<String, Integer> map = new HashMap<>();
-            while (reader.ready()) {
-                String line = reader.readLine();
-                if (line.contains("стартовал grafana")) {
-                    map.put("стартовал grafana", map.getOrDefault("стартовал grafana", 0) + 1);
-                } else if (line.contains("перешел в status")) {
-                    map.put("тест перешел в status", map.getOrDefault("тест перешел в status", 0) + 1);
-                } else if (line.contains("команда создана")) {
-                    map.put("команда создана", map.getOrDefault("команда создана", 0) + 1);
-                } else if (line.contains("запустил test")) {
-                    map.put("запустил test", map.getOrDefault("запустил test", 0) + 1);
-                } else if (line.contains("зарегистрировался")) {
-                    map.put("зарегистрировался", map.getOrDefault("зарегистрировался", 0) + 1);
-                } else if (line.contains("подписка для")) {
-                    map.put("подписка для команды создана", map.getOrDefault("подписка для команды создана", 0) + 1);
-                }
-            }
-            for (Map.Entry<String, Integer> entry : map.entrySet()) {
-                String key = entry.getKey();
-                Integer value = entry.getValue();
-                writer.append(key).append(": ").append(String.valueOf(value)).append("\r\n");
-            }
-            writer.flush();
-            fileWriter.flush();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public static void parseRegex(File file, File result) {
         try (FileReader fileReader = new FileReader(file);
              BufferedReader reader = new BufferedReader(fileReader);
              FileWriter fileWriter = new FileWriter(result);
              BufferedWriter writer = new BufferedWriter(fileWriter))
         {
-            Map<String, Integer> map = new HashMap<>();
-            String regex = "[А-я][^на базе]";
+            writer.append("day").append(",").append("hour").append(",").append("operation").append("\n");
+            writer.flush();
+
+            int date = 1;
+            String time;
+            String timeZone = "";
+            LocalTime oldTime = LocalTime.parse("00:00");
             while (reader.ready()) {
                 String line = reader.readLine();
-                writer.write(line.replaceAll(regex, "") + "\r\n");
+
+                if (line.contains("APP")) {
+                    timeZone = line.substring(line.indexOf(":") + 4, line.indexOf(":") + 6);
+                }
+
+                if (line.contains(":")) {
+                    time = line.replaceAll("^(\\D+)", "");
+                    if (timeZone.equals("PM")) {
+                        time = time.replaceAll(" PM", "");
+                        if (time.length() == 4) {
+                            time = "0" + time;
+                        }
+                        LocalTime localTime = LocalTime.parse(time).plusHours(12);
+                        if (oldTime.isAfter(localTime)) {
+                            date++;
+                        }
+                        oldTime = localTime;
+                        writer.append(String.valueOf(date)).append(",").append(localTime.toString()).append(",");
+                    } else if (timeZone.equals("AM")) {
+                        time = time.replaceAll(" AM", "");
+                        if (time.length() == 4) {
+                            time = "0" + time;
+                        }
+                        LocalTime localTime = LocalTime.parse(time);
+                        if (oldTime.isAfter(localTime)) {
+                            date++;
+                        }
+                        oldTime = localTime;
+                        writer.append(String.valueOf(date)).append(",").append(localTime.toString()).append(",");
+                    }
+                }
+
+                if (line.contains("команда создана в графане")) {
+                    writer.append("команда создана в графане").append('\n');
+                } else if (line.contains("подписка для команды создана")) {
+                    writer.append("подписка для команды создана").append('\n');
+                } else if (line.contains("зарегистрировался")) {
+                    writer.append("зарегистрировался").append('\n');
+                } else if (line.contains("команда создана")) {
+                    writer.append("команда создана").append('\n');
+                } else if (line.contains("запустил test")) {
+                    writer.append("запустил test").append('\n');
+                } else if (line.contains("перешел в status TEST_STOPPING")) {
+                    writer.append("перешел в status TEST_STOPPING").append('\n');
+                } else if (line.contains("перешел в status CANCELED")) {
+                    writer.append("перешел в status CANCELED").append('\n');
+                } else if (line.contains("стартовал grafana")) {
+                    writer.append("стартовал grafana").append('\n');
+                } else if (line.contains("перешел в status FINISHED")) {
+                    writer.append("перешел в status FINISHED").append('\n');
+                } else if (line.contains("обновил подписку")) {
+                    writer.append("обновил подписку").append('\n');
+                } else if (line.contains("перешел в status FAILED")) {
+                    writer.append("перешел в status FAILED").append('\n');
+                } else if (line.contains("ошибка регистрации")) {
+                    writer.append("ошибка регистрации").append('\n');
+                }
                 writer.flush();
                 fileWriter.flush();
             }
