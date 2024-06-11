@@ -1,7 +1,7 @@
 # LT
 Load testing for Performance Lab
 
-Методика - [https://onedrive.live.com/edit?id=C1E1BE5F05FF4687!sd0152a78423344709f810a5c7f06df42&resid=C1E1BE5F05FF4687!sd0152a78423344709f810a5c7f06df42&cid=c1e1be5f05ff4687&ithint=file%2Cdocx&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy9jMWUxYmU1ZjA1ZmY0Njg3L0VYZ3FGZEF6UW5CRW40RUtYSDhHMzBJQlhSSUZ5dVpXblRpR0pkYV9wYXFJTVE_ZT1adkt0bWo&migratedtospo=true&wdo=2](https://clck.ru/3BCrvv)
+Методика - https://clck.ru/3BCrvv
 
 Архитектура платформы Boomq
 ![image](https://github.com/Raevsk1i/LT/assets/150054332/9e93585c-dab3-4791-9786-9b491cc2d71b)
