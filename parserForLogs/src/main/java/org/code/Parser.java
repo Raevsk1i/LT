@@ -73,6 +73,12 @@ public class Parser {
              FileWriter fileWriter = new FileWriter(result);
              BufferedWriter writer = new BufferedWriter(fileWriter))
         {
+
+            List<String> list = Arrays.asList("команда создана в графане", "подписка для команды создана", "зарегистрировался",
+                    "команда создана", "запустил test", "перешел в status TEST_STOPPING", "перешел в status CANCELED",
+                    "стартовал grafana", "перешел в status FINISHED", "обновил подписку", "перешел в status FAILED",
+                    "ошибка регистрации");
+
             writer.append("day").append(",").append("hour").append(",").append("operation").append("\n");
             writer.flush();
 
@@ -103,12 +109,7 @@ public class Parser {
                             .append(resultTime.trim())
                             .append(",");
                 }
-
-                List<String> list = Arrays.asList("команда создана в графане", "подписка для команды создана", "зарегистрировался",
-                        "команда создана", "запустил test", "перешел в status TEST_STOPPING", "перешел в status CANCELED",
-                        "стартовал grafana", "перешел в status FINISHED", "обновил подписку", "перешел в status FAILED",
-                        "ошибка регистрации");
-
+                
                 for (String s : list) {
                     if (line.contains(s)) {
                         writer.append(s).append("\n");
