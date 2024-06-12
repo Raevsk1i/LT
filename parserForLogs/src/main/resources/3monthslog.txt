@@ -3486,12 +3486,6 @@ user 3087 зарегистрировался
 2:39
 user 3087 team of 3087  команда создана
 
-
-Dmitrii Molotkov
-  3:17 PM
-was added to #cloud_prod by vdsimako
-.
-
 Cloud bot
 APP  4:31 PM
 user 3075 team 3373 запустил test 4499 на базе project 3502, version 6566
