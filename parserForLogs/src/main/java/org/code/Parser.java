@@ -85,7 +85,7 @@ public class Parser {
             int date = 1;
             String time;
             String timeZone = "";
-            SimpleDateFormat formatDate = new SimpleDateFormat("hh:mm a");
+            SimpleDateFormat formatDate = new SimpleDateFormat("hh:mm");
             Date oldTime = formatDate.parse("00:00 PM");
             while (reader.ready()) {
                 String line = reader.readLine();
@@ -101,15 +101,14 @@ public class Parser {
                         date++;
                     }
 
-                    String resultTime = String.valueOf(formatDate.parse(time));
-                    resultTime = resultTime.substring(resultTime.indexOf("01") + 2, resultTime.indexOf("MSK") - 4);
+                    String resultTime = formatDate.format(formatDate.parse(time));
                     oldTime = formatDate.parse(time);
                     writer.append(String.valueOf(date))
                             .append(",")
                             .append(resultTime.trim())
                             .append(",");
                 }
-                
+
                 for (String s : list) {
                     if (line.contains(s)) {
                         writer.append(s).append("\n");
