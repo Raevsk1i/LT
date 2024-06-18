@@ -4,6 +4,8 @@ import lombok.Data;
 
 @Data
 public class UserMessage {
-    private String message;
-    private String username;
+    private String rqUID;
+    private String clientId;
+    private String openDate;
+    private String closeDate;
 }

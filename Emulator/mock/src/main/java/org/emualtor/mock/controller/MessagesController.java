@@ -25,12 +25,13 @@ public class MessagesController {
     )
     public ResponseEntity<Object> sendMessage(@PathVariable String topic, @RequestBody UserMessage message) {
         try {
+            log.info("Sending message to topic {}", topic);
             kafkaTemplate.send(topic, message);
-            log.info("Message sent to topic {}", topic);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
+        log.info("Message has been sent to topic {}", topic);
         return ResponseEntity.status(HttpStatus.OK).body(message);
     }
 }
