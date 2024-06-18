@@ -1,0 +1,2 @@
+"[{\"email\":\"testmember@mail.ru\",\"permissionList\":[\"ADMIN\",\"VIEW\",\"EDIT\",\"RUN\",\"M"
+"ANAGE_USERS_IN_ORG\"],\"userDisplayName\":\"testmember\"}]"

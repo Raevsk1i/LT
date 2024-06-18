@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IC:\Users\raevs\OneDrive\ƒокументы\VuGen\Scripts\UC_01_add_new_member
+-IC:\Program Files (x86)\Micro Focus\LoadRunner\include
+-ec:\users\raevs\onedrive\документы\vugen\scripts\uc_01_add_new_member\\logfile.log
+c:\users\raevs\onedrive\документы\vugen\scripts\uc_01_add_new_member\\combined_UC_01_add_new_member.c
+c:\users\raevs\onedrive\документы\vugen\scripts\uc_01_add_new_member\\pre_cci.c

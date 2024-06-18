@@ -1,0 +1,10 @@
+spring:
+  kafka:
+    listener:
+      ack-mode: record
+    bootstrap-servers: ${SPRING_KAFKA_HOST}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.LongSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  application:
+    name: mock

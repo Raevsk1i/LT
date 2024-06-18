@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IC:\Users\raevs\OneDrive\ƒокументы\VuGen\Scripts\UC_02_create_test
+-IC:\Program Files (x86)\Micro Focus\LoadRunner\include
+-ec:\users\raevs\onedrive\документы\vugen\scripts\uc_02_create_test\\logfile.log
+c:\users\raevs\onedrive\документы\vugen\scripts\uc_02_create_test\\combined_UC_02_create_test.c
+c:\users\raevs\onedrive\документы\vugen\scripts\uc_02_create_test\\pre_cci.c

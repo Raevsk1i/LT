@@ -1,0 +1,4 @@
+1d4
+[{"id":2016,"teamId":11,"userId":1933,"email":"testmember@mail.ru","userDisplayName":"testmember","permissionList":["RUN","ADMIN","MANAGE_USERS_IN_ORG","EDIT","VIEW"],"invitationStatus":"WAITING_FOR_ACCEPTANCE","inviteUrl":"/auth-srv/invite/SEHSSKc_0U2BNTvLhooMpbkvI--NU_4K_gXQu5pFI1k_3XS1Mk4RgkSUjhGRoadX8YCMZA5MzpDqh4Yx5DkBaCyNvBeAuB2R1LtFp0fKQWw=","expiredAt":"2024-06-18T08:44:51.338Z","createAt":"2024-06-17T08:44:51.338Z","updatedAt":"2024-06-17T08:44:51.338Z"}]
+0
+
