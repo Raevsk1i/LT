@@ -3,6 +3,8 @@ Load testing for Performance Lab
 
 Методика - https://clck.ru/3BCrvv
 
+Финальный отчёт - https://1drv.ms/w/c/c1e1be5f05ff4687/EbDUkx7m4sJDozb_6G0BlLABhH0SMfPNAP0cx-057Qwd_w?e=2Ugwcg
+
 Архитектура платформы Boomq
 ![Архитектура Boomq](https://github.com/Raevsk1i/LT/assets/150054332/a6463926-6bef-4dc4-809f-c2f8db02b5a8)
 
