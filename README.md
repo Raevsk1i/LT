@@ -5,6 +5,12 @@ Load testing for Performance Lab
 
 Финальный отчёт - https://1drv.ms/w/c/c1e1be5f05ff4687/EbDUkx7m4sJDozb_6G0BlLABhH0SMfPNAP0cx-057Qwd_w?e=2Ugwcg
 
+MaxPerf - Экспресс-отчёт по тесту Max Perf.docx 
+
+MaxPerfStab - Экспресс-отчёт по тесту на подтверждение Max Perf.docx 
+
+Stability - Экспресс-отчёт по Stability тесту.docx 
+
 Архитектура платформы Boomq
 ![Архитектура Boomq](https://github.com/Raevsk1i/LT/assets/150054332/a6463926-6bef-4dc4-809f-c2f8db02b5a8)
 
