@@ -9,7 +9,7 @@ MaxPerf - https://1drv.ms/w/c/c1e1be5f05ff4687/ERRNFPHSNppImAGO0QPASo8Bv_19qKTWa
 
 MaxPerfStab - https://1drv.ms/w/c/c1e1be5f05ff4687/EVSJhgLjl5FHoTTpYnpfqv8BB7fFNSPMbCTAl2QpobJBRw?e=U2hs75
 
-Stability - ttps://1drv.ms/w/c/c1e1be5f05ff4687/Eb5v62mugrFPi_opKxm3q40BLBUwdwdAd2nEvOrH-vOcQA?e=j0x5WK
+Stability - https://1drv.ms/w/c/c1e1be5f05ff4687/Eb5v62mugrFPi_opKxm3q40BLBUwdwdAd2nEvOrH-vOcQA?e=j0x5WK
 
 Архитектура платформы Boomq
 ![Архитектура Boomq](https://github.com/Raevsk1i/LT/assets/150054332/a6463926-6bef-4dc4-809f-c2f8db02b5a8)
